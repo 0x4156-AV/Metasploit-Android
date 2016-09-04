@@ -1,0 +1,16 @@
+#!/bin/bash
+# Script made by Aaron Vigal. http://www.aaronvigal.com
+
+mkdir ~/Desktop/Metasploit
+mkdir ~/Desktop/Metasploit/Android
+# Download needed files from github
+git clone https://github.com/AaronVigal/Metasploit-Android.git ~/Desktop/Metasploit/Android
+# Install dependencies
+sudo apt-get -y install at>/dev/null 
+sudo apt-get -y install libnotify-bin>/dev/null 
+# Make file executable
+sudo chmod +x ~/Desktop/Metasploit/Android/exploit
+sudo chmod +x ~/Desktop/Metasploit/Android/connect
+# Remove setup file
+rm setup
+notify-send "Metasploit-Android is done installing :)"
